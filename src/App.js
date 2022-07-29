@@ -1,7 +1,12 @@
+import { Dashboard, Error, Login } from './pages';
+
 function App() {
   return (
     <div>
-      <h1>Search Github Users - demo</h1>
+      <h1>Search Github Users</h1>
+      <Dashboard />
+      <Login />
+      <Error />
     </div>
   );
 }
