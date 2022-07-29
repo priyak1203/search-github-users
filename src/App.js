@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Search Github Users</h1>
+      <h1>Search Github Users - demo</h1>
     </div>
   );
 }
