@@ -1,13 +1,15 @@
 import { Dashboard, Error, Login } from './pages';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <h1>Search Github Users</h1>
-      <Dashboard />
-      <Login />
-      <Error />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </Router>
   );
 }
 
