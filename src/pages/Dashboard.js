@@ -1,6 +1,5 @@
 import React from 'react';
 import { Info, Navbar, Repos, Search, User } from '../components';
-import { GithubContext } from '../context/context';
 
 const Dashboard = () => {
   return (

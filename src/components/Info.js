@@ -1,7 +1,8 @@
 import React from 'react';
+import { useGithubContext } from '../context/context';
 
 const Info = () => {
-  return <h2>Info Component</h2>;
+  return <>Info Component</>;
 };
 
 export default Info;
