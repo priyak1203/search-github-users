@@ -9,6 +9,7 @@
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(185, 91%, 17%);
+  --clr-primary-3: hsl(185, 81%, 29%);
   /* primary/main color */
   --clr-primary-5: hsl(185, 62%, 45%);
   --clr-primary-8: hsl(184, 80%, 74%);
@@ -33,7 +34,8 @@
 /* ===============================
           Global Styles
 ================================== */
-* {
+*,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -57,7 +59,8 @@ img {
 }
 
 h1,
-h3 {
+h3,
+h4 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
@@ -69,6 +72,9 @@ h1 {
 }
 h3 {
   font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
 }
 p {
   margin-bottom: 1.25rem;
@@ -82,11 +88,15 @@ p {
   h3 {
     font-size: 1.75rem;
   }
+  h4 {
+    font-size: 1rem;
+  }
   body {
     font-size: 1rem;
   }
   h1,
-  h3 {
+  h3,
+  h4 {
     line-height: 1;
   }
 }
