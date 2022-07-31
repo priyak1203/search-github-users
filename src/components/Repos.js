@@ -1,7 +1,16 @@
 import React from 'react';
+import { useGithubContext } from '../context/context';
+import { ExampleChart } from './Charts';
 
 const Repos = () => {
-  return <h2>Repos component</h2>;
+  const { repos } = useGithubContext();
+  // console.log(repos);
+  return (
+    <div>
+      Repos
+      <ExampleChart />
+    </div>
+  );
 };
 
 export default Repos;
