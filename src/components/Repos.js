@@ -27,7 +27,7 @@ const Repos = () => {
     },
   ];
 
-  // The data for pieChart
+  // The data for pieChart - most used languages
   let languages = repos.reduce((total, item) => {
     const { language } = item;
     if (!language) return total;
