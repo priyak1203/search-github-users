@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useGithubContext } from '../context/context';
-import { ExampleChart } from './Charts';
+import { ExampleChart, Pie } from './Charts';
 
 const Repos = () => {
   const { repos } = useGithubContext();
@@ -30,7 +30,8 @@ const Repos = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
-        <ExampleChart data={chartData} />
+        <Pie data={chartData} />
+        {/* <ExampleChart data={chartData} /> */}
         <ExampleChart data={chartData} />
       </Wrapper>
     </section>
