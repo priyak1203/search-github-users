@@ -7,7 +7,7 @@ const Repos = () => {
   const { repos } = useGithubContext();
   // console.log(repos);
 
-  // STEP 2 - Chart Data
+  // STEP 2 - Chart Data - Example
   const chartData = [
     {
       label: 'HTML',
@@ -27,11 +27,33 @@ const Repos = () => {
     },
   ];
 
+  // The data for pieChart
+  let languages = repos.reduce((total, item) => {
+    const { language } = item;
+    if (!language) return total;
+
+    if (!total[language]) {
+      total[language] = { label: language, value: 1 };
+    } else {
+      total[language] = {
+        ...total[language],
+        value: total[language].value + 1,
+      };
+    }
+
+    return total;
+  }, {});
+
+  languages = Object.values(languages)
+    .sort((a, b) => {
+      return b.value - a.value;
+    })
+    .slice(0, 5);
+
   return (
     <section className="section">
       <Wrapper className="section-center">
-        <Pie data={chartData} />
-        {/* <ExampleChart data={chartData} /> */}
+        <Pie data={languages} />
         <ExampleChart data={chartData} />
       </Wrapper>
     </section>
