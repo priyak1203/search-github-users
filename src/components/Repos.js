@@ -38,7 +38,6 @@ const Repos = () => {
 };
 
 const Wrapper = styled.div`
-  background-color: pink;
   display: grid;
   justify-items: center;
   gap: 2rem;
