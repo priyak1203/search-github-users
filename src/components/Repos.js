@@ -6,30 +6,6 @@ import { Bar, Column, Doughnut, ExampleChart, Pie } from './Charts';
 const Repos = () => {
   const { repos } = useGithubContext();
 
-  // STEP 2 - Chart Data - Example
-  const chartData = [
-    {
-      label: 'HTML',
-      value: '59',
-    },
-    {
-      label: 'CSS',
-      value: '260',
-    },
-    {
-      label: 'JavaScript',
-      value: '180',
-    },
-    {
-      label: 'Python',
-      value: '40',
-    },
-    {
-      label: 'SCSS',
-      value: '25',
-    },
-  ];
-
   // extracting languages, no of repos and total star count per language
   const languages = repos.reduce((total, item) => {
     const { language, stargazers_count } = item;
@@ -66,13 +42,27 @@ const Repos = () => {
     })
     .slice(0, 5);
 
+  // Data for column and bar chart - most forked and most starred repos
+  let { stars, forks } = repos.reduce(
+    (total, item) => {
+      const { name, stargazers_count, forks } = item;
+      total.stars[stargazers_count] = { label: name, value: stargazers_count };
+      total.forks[forks] = { label: name, value: forks };
+      return total;
+    },
+    { stars: {}, forks: {} }
+  );
+
+  stars = Object.values(stars).slice(-5).reverse();
+  forks = Object.values(forks).slice(-5).reverse();
+
   return (
     <section className="section">
       <Wrapper className="section-center">
         <Pie data={mostLanguages} />
-        <Column data={chartData} />
+        <Column data={stars} />
         <Doughnut data={mostStars} />
-        <Bar data={chartData} />
+        <Bar data={forks} />
       </Wrapper>
     </section>
   );
