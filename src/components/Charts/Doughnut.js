@@ -12,25 +12,26 @@ import FusionCharts from 'fusioncharts';
 import Chart from 'fusioncharts/fusioncharts.charts';
 
 // Include the theme as fusion
-import UmberTheme from 'fusioncharts/themes/fusioncharts.theme.umber';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
 // Adding the chart and theme as dependency to the core fusioncharts
-ReactFC.fcRoot(FusionCharts, Chart, UmberTheme);
+ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
 const ChartComponent = ({ data }) => {
   // STEP 3 - Creating the JSON object to store the chart configurations
   const chartConfigs = {
     type: 'doughnut2d', // The chart type
     width: '100%', // Width of the chart
-    height: '400', // Height of the chart
+    height: '350', // Height of the chart
     dataFormat: 'json', // Data type
     dataSource: {
       // Chart Configuration
       chart: {
         caption: 'Stars Per Language',
-        theme: 'umber',
+        theme: 'fusion',
         decimals: 0,
-        doughnutRadius: '45%',
+        pieRadius: '45%',
+        doughnutRadius: '60%',
         showPercentValues: 0,
       },
       // Chart Data

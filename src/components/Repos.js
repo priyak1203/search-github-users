@@ -5,7 +5,6 @@ import { Doughnut, ExampleChart, Pie } from './Charts';
 
 const Repos = () => {
   const { repos } = useGithubContext();
-  // console.log(repos);
 
   // STEP 2 - Chart Data - Example
   const chartData = [
@@ -31,7 +30,7 @@ const Repos = () => {
     },
   ];
 
-  // The data for pieChart - most used languages
+  // Data for pie chart - most used languages
   let languages = repos.reduce((total, item) => {
     const { language } = item;
     if (!language) return total;
@@ -54,10 +53,9 @@ const Repos = () => {
     })
     .slice(0, 5);
 
-  // Count the stars
+  // Data for doughnut chart - most stars per language
   let stars = repos.reduce((total, item) => {
     const { language, stargazers_count } = item;
-    // console.log({ language, stargazers_count });
     if (!language) return total;
     if (!total[language]) {
       total[language] = { label: language, value: stargazers_count };
