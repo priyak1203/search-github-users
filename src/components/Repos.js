@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useGithubContext } from '../context/context';
-import { ExampleChart, Pie } from './Charts';
+import { Doughnut, ExampleChart, Pie } from './Charts';
 
 const Repos = () => {
   const { repos } = useGithubContext();
@@ -54,11 +54,35 @@ const Repos = () => {
     })
     .slice(0, 5);
 
+  // Count the stars
+  let stars = repos.reduce((total, item) => {
+    const { language, stargazers_count } = item;
+    // console.log({ language, stargazers_count });
+    if (!language) return total;
+    if (!total[language]) {
+      total[language] = { label: language, value: stargazers_count };
+    } else {
+      total[language] = {
+        ...total[language],
+        value: total[language].value + stargazers_count,
+      };
+    }
+
+    return total;
+  }, {});
+
+  stars = Object.values(stars)
+    .sort((a, b) => {
+      return b.value - a.value;
+    })
+    .slice(0, 5);
+
   return (
     <section className="section">
       <Wrapper className="section-center">
         <Pie data={languages} />
         <ExampleChart data={chartData} />
+        <Doughnut data={stars} />
       </Wrapper>
     </section>
   );

@@ -1,7 +1,7 @@
 import Bar from './Bar';
 import Column from './Column';
-import Donut from './Doughnut';
+import Doughnut from './Doughnut';
 import ExampleChart from './ExampleChart';
 import Pie from './Pie';
 
-export { Bar, Column, Donut, ExampleChart, Pie };
+export { Bar, Column, Doughnut, ExampleChart, Pie };
