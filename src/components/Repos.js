@@ -25,6 +25,10 @@ const Repos = () => {
       label: 'Python',
       value: '40',
     },
+    {
+      label: 'SCSS',
+      value: '25',
+    },
   ];
 
   // The data for pieChart - most used languages
