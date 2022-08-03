@@ -13,6 +13,7 @@ const GithubProvider = ({ children }) => {
   const [repos, setRepos] = useState(mockRepos);
 
   const [requests, setRequests] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: '' });
 
   // check remaining requests
@@ -34,6 +35,7 @@ const GithubProvider = ({ children }) => {
   // search github user
   const searchGithubUser = async (user) => {
     toggleError();
+    setIsLoading(true);
     const response = await axios(`${rootUrl}users/${user}`).catch((err) =>
       console.log(err)
     );
@@ -43,6 +45,9 @@ const GithubProvider = ({ children }) => {
     } else {
       toggleError(true, 'there is no user with that username!');
     }
+
+    checkRequests();
+    setIsLoading(false);
   };
 
   // set error status and message
@@ -60,6 +65,7 @@ const GithubProvider = ({ children }) => {
         followers,
         repos,
         requests,
+        isLoading,
         error,
         searchGithubUser,
       }}
