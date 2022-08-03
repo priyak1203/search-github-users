@@ -15,7 +15,7 @@ const GithubProvider = ({ children }) => {
   const [requests, setRequests] = useState(0);
 
   // check remaining requests
-  const checkRate = () => {
+  const checkRequests = () => {
     axios(`${rootUrl}rate_limit`)
       .then(({ data }) => {
         let {
@@ -29,9 +29,8 @@ const GithubProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    checkRate();
-  }, []);
+  // check requests on initial render
+  useEffect(checkRequests, []);
 
   return (
     <GithubContext.Provider
