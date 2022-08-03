@@ -31,7 +31,6 @@ const Search = () => {
 };
 
 const Wrapper = styled.div`
-  // background-color: peachpuff;
   position: relative;
   display: grid;
   gap: 1rem 1.75rem;
