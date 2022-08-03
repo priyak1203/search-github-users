@@ -13,6 +13,7 @@ const GithubProvider = ({ children }) => {
   const [repos, setRepos] = useState(mockRepos);
 
   const [requests, setRequests] = useState(0);
+  const [error, setError] = useState({ show: false, msg: '' });
 
   // check remaining requests
   const checkRequests = () => {
@@ -21,12 +22,18 @@ const GithubProvider = ({ children }) => {
         let {
           rate: { remaining },
         } = data;
+
         setRequests(remaining);
         if (remaining === 0) {
-          // throw error
+          toggleError(true, 'sorry, you have exceeded your hourly rate limit!');
         }
       })
       .catch((err) => console.log(err));
+  };
+
+  // set error status and message
+  const toggleError = (show = false, msg = '') => {
+    setError({ show, msg });
   };
 
   // check requests on initial render
@@ -39,6 +46,7 @@ const GithubProvider = ({ children }) => {
         followers,
         repos,
         requests,
+        error,
       }}
     >
       {children}

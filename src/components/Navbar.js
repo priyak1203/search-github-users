@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Navbar = () => {
-  return <h2>Navbar Component</h2>;
+  return (
+    <section className="section">
+      <div className="section-center">
+        <h3>NAVBAR</h3>
+      </div>
+    </section>
+  );
 };
 
 export default Navbar;
