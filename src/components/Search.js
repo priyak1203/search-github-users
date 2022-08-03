@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
+import { useGithubContext } from '../context/context';
 
 const Search = () => {
+  const { requests } = useGithubContext();
   const [user, setUser] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
@@ -21,10 +24,10 @@ const Search = () => {
               value={user}
               onChange={(e) => setUser(e.target.value)}
             />
-            <button type="submit">Search</button>
+            {requests > 0 && <button type="submit">Search</button>}
           </div>
         </form>
-        <h3>requests : 50/60</h3>
+        <h3>requests : {requests}/60</h3>
       </Wrapper>
     </section>
   );
