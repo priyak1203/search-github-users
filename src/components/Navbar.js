@@ -1,13 +1,40 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
+import styled from 'styled-components';
 
 const Navbar = () => {
+  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
+    useAuth0();
+  console.log({ isAuthenticated, user, isLoading });
   return (
-    <section className="section">
-      <div className="section-center">
-        <h3>NAVBAR</h3>
-      </div>
-    </section>
+    <Wrapper>
+      <button onClick={loginWithRedirect}>login</button>
+      <button onClick={() => logout({ returnTo: window.location.origin })}>
+        logout
+      </button>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.nav`
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+  background: var(--clr-white);
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  button {
+    background: transparent;
+    border: transparent;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    color: var(--clr-grey-5);
+    cursor: pointer;
+  }
+`;
 export default Navbar;
