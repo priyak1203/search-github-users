@@ -1,7 +1,5 @@
-import { Dashboard, Error, Login } from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PrivateRoute from './pages/PrivateRoute';
-import AuthWrapper from './pages/AuthWrapper';
+import { AuthWrapper, Dashboard, Error, Login, PrivateRoute } from './pages';
 
 function App() {
   return (
