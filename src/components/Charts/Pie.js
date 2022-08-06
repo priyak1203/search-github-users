@@ -28,9 +28,12 @@ const ChartComponent = ({ data }) => {
       // Chart Configuration
       chart: {
         caption: 'Languages',
+        captionFontSize: 20,
         theme: 'fusion',
         decimals: 0,
         pieRadius: '45%',
+        paletteColors:
+          '#5D62B5, #2caeba, #F2726F, #FFC533, #8d6e63, #1de9b6, #6E80CA',
       },
       // Chart Data
       data,

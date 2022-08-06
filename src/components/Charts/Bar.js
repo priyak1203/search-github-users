@@ -28,11 +28,18 @@ const ChartComponent = ({ data }) => {
       // Chart Configuration
       chart: {
         caption: 'Most Forked',
+        captionFontSize: 20,
+        alignCaptionWithCanvas: 0,
         yAxisName: 'Forks',
         xAxisName: 'Repos',
         yAxisNameFontSize: 16,
         xAxisNameFontSize: 16,
-        // theme: 'fusion',
+        xAxisNameFontBold: 1,
+        yAxisNameFontBold: 1,
+        chartTopMargin: '10px',
+        theme: 'fusion',
+        paletteColors:
+          '#5D62B5, #2caeba, #F2726F, #FFC533, #8d6e63, #1de9b6, #6E80CA',
       },
       // Chart Data
       data,
