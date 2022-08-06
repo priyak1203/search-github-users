@@ -29,6 +29,10 @@ const ChartComponent = ({ data }) => {
       chart: {
         caption: 'Stars Per Language',
         captionFontSize: 20,
+        captionFontColor: '#5a5a5a',
+        baseFontSize: 16,
+        baseFontColor: '#617d98',
+        valueFontColor: '#617d98',
         theme: 'fusion',
         decimals: 0,
         pieRadius: '45%',

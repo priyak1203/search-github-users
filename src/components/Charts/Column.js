@@ -29,6 +29,7 @@ const ChartComponent = ({ data }) => {
       chart: {
         caption: 'Most Popular',
         captionFontSize: 20,
+        captionFontColor: '#5a5a5a',
         alignCaptionWithCanvas: 0,
         yAxisName: 'Stars',
         xAxisName: 'Repos',
@@ -37,11 +38,15 @@ const ChartComponent = ({ data }) => {
         xAxisNameFontBold: 1,
         yAxisNameFontBold: 1,
         chartTopMargin: '10px',
-
+        baseFontSize: 16,
+        baseFontColor: '#617d98',
+        showValues: 1,
+        valueFontColor: '#617d98',
         theme: 'fusion',
         paletteColors:
           '#5D62B5, #2caeba, #F2726F, #FFC533, #8d6e63, #1de9b6, #6E80CA',
       },
+
       // Chart Data
       data,
     },
