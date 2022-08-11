@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import loginImg from '../images/login-img.svg';
 
+
 const Login = () => {
   const { loginWithRedirect } = useAuth0();
   return (
@@ -29,6 +30,8 @@ const Wrapper = styled.section`
   }
   img {
     margin-bottom: 2rem;
+    width: 600px;
+    height: 400px;
   }
   h1 {
     margin-bottom: 1.5rem;
