@@ -106,12 +106,13 @@ const Wrapper = styled.section`
       color: var(--clr-primary-5);
     }
     .purple {
-       background: #e6e6ff;
+      background: #e6e6ff;
       color: #5d55fa;
     }
     .yellow {
       background: #fffbea;
       color: #f0b429;
     }
+  }
 `;
 export default UserInfo;
