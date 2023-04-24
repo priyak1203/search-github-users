@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import loginImg from '../images/login-img.svg';
 
-
 const Login = () => {
   const { loginWithRedirect } = useAuth0();
   return (

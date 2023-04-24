@@ -22,6 +22,7 @@
   --clr-grey-10: #f1f5f8;
 
   --clr-white: #fff;
+  --clr-bgColor: hsl(215, 49%, 93%);
 
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
@@ -43,7 +44,7 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
+  background: var(--clr-bgColor);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
