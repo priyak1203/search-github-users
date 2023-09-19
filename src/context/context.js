@@ -16,6 +16,9 @@ const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: '' });
 
+  // demp user
+  const [demoUser, setDemoUser] = useState(false);
+
   // check remaining requests
   const checkRequests = () => {
     axios(`${rootUrl}rate_limit`)
@@ -84,6 +87,8 @@ const GithubProvider = ({ children }) => {
         isLoading,
         error,
         searchGithubUser,
+        demoUser,
+        setDemoUser,
       }}
     >
       {children}

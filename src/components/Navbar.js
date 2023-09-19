@@ -2,10 +2,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 
 import styled from 'styled-components';
+import { useGithubContext } from '../context/context';
 
 const Navbar = () => {
   const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
     useAuth0();
+  const { demoUser } = useGithubContext();
 
   const isUser = isAuthenticated && user;
 
@@ -17,7 +19,8 @@ const Navbar = () => {
           Welcome, <strong>{user.name.toUpperCase()}</strong>
         </h4>
       )}
-      {isUser ? (
+      {demoUser && <h4>Welcome to Demo App</h4>}
+      {isUser || demoUser ? (
         <button onClick={() => logout({ returnTo: window.location.origin })}>
           logout
         </button>
