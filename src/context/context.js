@@ -3,9 +3,10 @@ import mockUser from './MockData/mockUser';
 import mockFollowers from './MockData/mockFollowers';
 import mockRepos from './MockData/mockRepos';
 import axios from 'axios';
-const GithubContext = React.createContext();
 
 const rootUrl = 'https://api.github.com/';
+
+const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
   const [githubUser, setGithubUser] = useState(mockUser);
