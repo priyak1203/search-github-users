@@ -17,7 +17,7 @@ const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: '' });
 
-  // demp user
+  // demo user
   const [demoUser, setDemoUser] = useState(false);
 
   // check remaining requests

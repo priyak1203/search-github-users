@@ -5,6 +5,7 @@ import loadingGif from '../images/preloader.gif';
 
 const AuthWrapper = ({ children }) => {
   const { isLoading, error } = useAuth0();
+
   if (isLoading) {
     return (
       <Wrapper>
@@ -12,6 +13,7 @@ const AuthWrapper = ({ children }) => {
       </Wrapper>
     );
   }
+
   if (error) {
     return (
       <Wrapper>
@@ -19,6 +21,7 @@ const AuthWrapper = ({ children }) => {
       </Wrapper>
     );
   }
+
   return <>{children}</>;
 };
 
